@@ -1,0 +1,189 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv40beta21.dtd" >
+   <PATCH nodename="C:\Users\Axe\Documents\vvvv_40beta21\modules\Visuals\Lines Broken.v4p">
+   <BOUNDS type="Window" left="9285" top="5880" width="9000" height="6000">
+   </BOUNDS>
+   <NODE componentmode="Hidden" id="5" nodename="C:\Users\Axe\Documents\vvvv_40beta21\modules\Visuals\HiMidsLows.v4p" path="C:\Users\Axe\Documents\vvvv_40beta21\modules\Visuals\">
+   <BOUNDS height="100" left="2760" top="1275" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS left="2760" top="1275" type="Box">
+   </BOUNDS>
+   <PIN pinname="Audio In" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="1725" top="4830" width="9000" height="6915">
+   </BOUNDS>
+   <PIN pinname="Lows" visible="1">
+   </PIN>
+   <PIN pinname="Mids" visible="1">
+   </PIN>
+   <PIN pinname="His" visible="1">
+   </PIN>
+   </NODE>
+   <NODE componentmode="Hidden" id="4" nodename="AudioIn (DShow9)">
+   <BOUNDS height="0" left="3255" top="585" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Driver" slicecount="1" values="|Line In (Realtek AC&apos;97 Audio)|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="Audio In" srcnodeid="4" srcpinname="Audio">
+   </LINK>
+   <NODE componentmode="InABox" id="3" nodename="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="2235" top="105" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="480" left="2235" top="105" type="Box" width="480">
+   </BOUNDS>
+   <BOUNDS height="160" left="7965" top="5580" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Enabled" srcnodeid="3" srcpinname="Y Output Value">
+   </LINK>
+   <NODE nodename="Renderer (EX9)" componentmode="InAWindow" id="6">
+   <BOUNDS type="Node" left="2160" top="4740" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="2160" top="4740" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="2355" top="5685" width="6240" height="5010">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   <PIN pinname="View Transform" visible="1">
+   </PIN>
+   <PIN pinname="Projection Transform" visible="1">
+   </PIN>
+   <PIN pinname="Background Color" slicecount="1" values="|0.53372,0.53372,0.53372,1.00000|">
+   </PIN>
+   </NODE>
+   <NODE nodename="CircularSpread (Spreads)" componentmode="Hidden" id="7">
+   <BOUNDS type="Node" left="2520" top="2745" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Input X" visible="1" slicecount="1" values="-0.319778858252931">
+   </PIN>
+   <PIN pinname="Input Y" visible="1" slicecount="1" values="0.549567909230123">
+   </PIN>
+   <PIN pinname="Spread Count" slicecount="1" values="16">
+   </PIN>
+   <PIN pinname="Output X" visible="1">
+   </PIN>
+   <PIN pinname="Output Y" visible="1">
+   </PIN>
+   <PIN pinname="Height" visible="1">
+   </PIN>
+   <PIN pinname="Factor" visible="1" slicecount="1" values="1.19249125095442">
+   </PIN>
+   <PIN pinname="Width" visible="1">
+   </PIN>
+   </NODE>
+   <NODE nodename="Translate (Transform)" componentmode="Hidden" id="9">
+   <BOUNDS type="Node" left="2055" top="3315" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Transform Out" visible="1">
+   </PIN>
+   <PIN pinname="X" visible="1">
+   </PIN>
+   <PIN pinname="Y" visible="1">
+   </PIN>
+   <PIN pinname="Z" slicecount="1" values="0.21">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="7" srcpinname="Output X" dstnodeid="9" dstpinname="X">
+   </LINK>
+   <LINK srcnodeid="7" srcpinname="Output Y" dstnodeid="9" dstpinname="Y">
+   </LINK>
+   <NODE nodename=":MODULES:\vvvv group\Transform\Camera (Transform Softimage).v4p" componentmode="Hidden" id="10" path="C:\Users\Axe\Documents\vvvv_40beta21\modules\vvvv group\Transform\">
+   <BOUNDS type="Node" left="4215" top="3900" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="4215" top="3900" width="4800" height="3600">
+   </BOUNDS>
+   <BOUNDS type="Window" left="13530" top="10140" width="9000" height="6000">
+   </BOUNDS>
+   <PIN pinname="View Projection" visible="1">
+   </PIN>
+   <PIN pinname="Projection" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="10" srcpinname="View Projection" dstnodeid="6" dstpinname="View Transform">
+   </LINK>
+   <LINK srcnodeid="10" srcpinname="Projection" dstnodeid="6" dstpinname="Projection Transform">
+   </LINK>
+   <NODE nodename="Box (EX9.Geometry)" componentmode="Hidden" id="12">
+   <BOUNDS type="Node" left="840" top="3270" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Width" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <NODE nodename=":EFFECTS:\PhongPoint.fx" componentmode="Hidden" id="13">
+   <BOUNDS type="Node" left="675" top="3900" width="0" height="0">
+   </BOUNDS>
+   <BOUNDS type="Box" left="675" top="3900" width="6000" height="6000">
+   </BOUNDS>
+   <BOUNDS type="Window" left="10905" top="10050" width="12000" height="12000">
+   </BOUNDS>
+   <PIN pinname="Mesh" visible="1">
+   </PIN>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Transform" visible="1">
+   </PIN>
+   <PIN pinname="Render State" visible="1" slicecount="1" values="||">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="12" srcpinname="Mesh" dstnodeid="13" dstpinname="Mesh">
+   </LINK>
+   <LINK srcnodeid="13" srcpinname="Layer" dstnodeid="6" dstpinname="Layers">
+   </LINK>
+   <LINK srcnodeid="9" srcpinname="Transform Out" dstnodeid="13" dstpinname="Transform">
+   </LINK>
+   <NODE nodename="Map (Value)" componentmode="Hidden" id="14">
+   <BOUNDS type="Node" left="1905" top="1980" width="0" height="0">
+   </BOUNDS>
+   <PIN pinname="Destination Minimum" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="9.38000000000001">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Lows" dstnodeid="14" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="14" srcpinname="Output" dstnodeid="7" dstpinname="Width">
+   </LINK>
+   <NODE componentmode="Hidden" id="15" nodename="Map (Value)">
+   <BOUNDS height="0" left="3195" top="1935" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Destination Minimum" slicecount="1" values="3">
+   </PIN>
+   <PIN pinname="Destination Maximum" slicecount="1" values="9">
+   </PIN>
+   <PIN pinname="Input" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="5" srcpinname="Mids" dstnodeid="15" dstpinname="Input">
+   </LINK>
+   <LINK srcnodeid="15" srcpinname="Output" dstnodeid="7" dstpinname="Height">
+   </LINK>
+   </PATCH>

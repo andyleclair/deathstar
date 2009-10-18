@@ -1,0 +1,53 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv40beta21.dtd" >
+   <PATCH nodename="C:\Users\Axe\Documents\vvvv_40beta21\modules\Visuals\Base.v4p">
+   <BOUNDS type="Window" left="9285" top="5880" width="9000" height="6000">
+   </BOUNDS>
+   <NODE componentmode="Hidden" id="5" nodename="C:\Users\Axe\Documents\vvvv_40beta21\modules\Visuals\HiMidsLows.v4p" path="C:\Users\Axe\Documents\vvvv_40beta21\modules\Visuals\">
+   <BOUNDS height="100" left="2910" top="2070" type="Node" width="100">
+   </BOUNDS>
+   <BOUNDS left="2910" top="2070" type="Box">
+   </BOUNDS>
+   <PIN pinname="Audio In" visible="1">
+   </PIN>
+   <BOUNDS type="Window" left="1725" top="4830" width="9000" height="6915">
+   </BOUNDS>
+   </NODE>
+   <NODE componentmode="Hidden" id="4" nodename="AudioIn (DShow9)">
+   <BOUNDS height="0" left="3330" top="1200" type="Node" width="0">
+   </BOUNDS>
+   <PIN pinname="Audio" visible="1">
+   </PIN>
+   <PIN pinname="Enabled" visible="1">
+   </PIN>
+   <PIN pinname="Driver" slicecount="1" values="|Line In (Realtek AC&apos;97 Audio)|">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="5" dstpinname="Audio In" srcnodeid="4" srcpinname="Audio">
+   </LINK>
+   <NODE componentmode="InABox" id="3" nodename="IOBox (Value Advanced)">
+   <BOUNDS height="0" left="2220" top="390" type="Node" width="0">
+   </BOUNDS>
+   <BOUNDS height="480" left="2220" top="390" type="Box" width="480">
+   </BOUNDS>
+   <BOUNDS height="160" left="7965" top="5580" type="Window" width="215">
+   </BOUNDS>
+   <PIN pinname="Show Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Show Slider" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Minimum" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Maximum" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Slider Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="1">
+   </PIN>
+   </NODE>
+   <LINK dstnodeid="4" dstpinname="Enabled" srcnodeid="3" srcpinname="Y Output Value">
+   </LINK>
+   </PATCH>
